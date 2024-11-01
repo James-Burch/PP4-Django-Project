@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['8000-jamesburch-pp4djangopro-ku1jfkpmxwq.ws-eu116.gitpod.io']
 
+CSRF_TRUSTED_ORIGINS = ['https://8000-jamesburch-pp4djangopro-ku1jfkpmxwq.ws-eu116.gitpod.io']
 
 # Application definition
 
