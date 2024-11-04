@@ -18,27 +18,9 @@
             </div>
         </div>
         <div class="card col-5">
-            <div class="card-body">
-                <h4 class="card-title">Select a date to play</h4>
-                <form id="dateSelection">
-                    <div class="form-group">
-                        <input type="date" class="form-control" id="bookingDate" required>
-                    </div>
-                    <button type="button" class="btn btn-primary mt-2"id="checkAvailabilityBtn">Check Available Times</button>
-                </form>
-            </div>
+            
         </div>
 
-        <!-- Available Times Section, Only displays once a date is selected -->
-         <div id="timeSelection" class="card mt-2" style="display: none;">
-            <div class="card-body">
-                <h4>Available Times on <span id="selectedDate"></span></h4>
-                <ul id="availableTimes" class="list-group mb-2">
-                    <!-- Times available on the date selected will be put here through JS -->
-                </ul>
-                <button type="button" class="btn btn-secondary" id="goBackBtn">Back to Date Selection</button>
-            </div>
-         </div>
         <div class="card col-2">
             <button class="mt-2">Add Extra Players</button>
         </div>
