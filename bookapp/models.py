@@ -1,19 +1,39 @@
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import date, time, datetime
+from django import forms
 
 # Create your models here.
-class AvailableTime(models.Model):
-    date = models.DateField()
-    time = models.TimeField()
-    # Check if a time is already booked
-    is_booked = models.BooleanField(default=False)
 
-class Meta:
-    # Stop duplicate dates/times
-    unique_together = ('date', 'time')
+class AvailableDate(models.Model):
+    date = models.DateField(unique=True)
+
+    def __str__(self):
+        return str(self.date)
 
 class Booking(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
-    slot = models.OneToOneField(AvailableTime, on_delete=models.CASCADE, null=True, default=1)
-    booked_at = models.DateTimeField(default=datetime.now)
+    TIME_SLOTS = [
+        ('9:00 AM', '9:00 AM'),
+        ('12:00 PM', '12:00 PM'),
+        ('3:00 PM', '3:00 PM'),
+        ('6:00 PM', '6:00 PM'),
+    ]
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    date = models.ForeignKey(AvailableDate, on_delete=models.CASCADE)
+    time_slot = models.CharField(max_length=10, choices=TIME_SLOTS)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ('date', 'time_slot')
+
+    def __str__(self):
+        return f"{self.user} - {self.date} at {self.time_slot}"
+
+class BookingForm(forms.ModelForm):
+    date = forms.ModelChoiceField(queryset=AvailableDate.objects.all())
+    time_slot = forms.ChoiceField(choices=Booking.TIME_SLOTS)
+
+    class Meta:
+        model = Booking
+        fields = ['date', 'time_slot']
