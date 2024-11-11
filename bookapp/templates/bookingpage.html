@@ -17,6 +17,11 @@
             </div>
         </div>
         <div class="card col-5">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Book</button>
+            </form>
             
         </div>
 
