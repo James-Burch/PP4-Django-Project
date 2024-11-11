@@ -11,18 +11,17 @@
                 <h3 class="card-title">Your Information</h3>
                 <ul class="no-bullets">
                     <li>Name: {{ user }}</li>
-                    <li>Email Address: {{ user.email_address }}</li>
-                    <li>Phone Number: {{ user.phone_no }}</li>
                 </ul>
             </div>
         </div>
         <div class="card col-5">
+            <h1>Book a Time Slot</h1>
             <form method="post">
                 {% csrf_token %}
-                {{ form.as_p }}
+                {{ form.date.label_tag }} {{ form.date }}
+                {{ form.time_slot.label_tag }} {{ form.time_slot }}
                 <button type="submit">Book</button>
             </form>
-            
         </div>
 
         <div class="card col-2">

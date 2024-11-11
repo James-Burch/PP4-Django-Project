@@ -14,7 +14,9 @@ def home(request):
 
 @login_required
 def booking(request):
-    return render(request, "bookingpage.html")
+    form = BookingForm()
+    return render(request, "bookingpage.html", {'form': form})
+
 
 def register(request):
     form = UserCreationForm()
