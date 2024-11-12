@@ -1,34 +1,39 @@
 {% extends "base.html" %} {% block title %} Booking Page {% endblock %}
 {% load static %}
 {% block content%}
-<div class="">
+<div class="course-bg-image">
 
 </div>
-<div class="container-fluid text-center bg-green">
-    <div class="parallax text-center">
-        <h1 class="text-white">Book a Time Slot</h1>
-        <!-- Displays the information of the user that is logged in -->
-        <div class="row mt-4 d-flex justify-content-space-evenly">
-            <div class="card col-5">
-                <div class="card-body">
-                    <h3 class="card-title">Your Information</h3>
-                    <ul class="no-bullets">
-                        <li>Name: {{ user }}</li>
-                    </ul>
-                </div>
+<hr>
+<div class="text-center m-5 text-green">
+        <h2>Members and Visitors Tee Time Booking</h2>
+        <p>Welcome to the Burch's Golf Course online tee time booking service. This service allows you to book a tee
+            time at our golf course and get confirmation instantly.</p>
+</div>
+<hr>
+<div class="container-fluid bg-green">
+    <h1 class="text-white text-center">Book a Tee</h1>
+    <!-- Displays the information of the user that is logged in -->
+    <div class="row mt-4 d-flex justify-content-space-evenly">
+        <div class="card col-4">
+            <div class="card-body">
+                <h3 class="card-title">Your Information</h3>
+                <ul class="no-bullets">
+                    <li>Name: {{ user }}</li>
+                </ul>
             </div>
-            <div class="card col-5">
-                <form method="post">
-                    {% csrf_token %}
-                    {{ form.date.label_tag }} {{ form.date }}
-                    {{ form.time_slot.label_tag }} {{ form.time_slot }}
-                    <button type="submit">Book</button>
-                </form>
-            </div>
+        </div>
+        <div class="card col-5">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.date.label_tag }} {{ form.date }}
+                {{ form.time_slot.label_tag }} {{ form.time_slot }}
+                <button type="submit">Book</button>
+            </form>
+        </div>
 
-            <div class="card col-2">
-                <button class="mt-2">Add Extra Players</button>
-            </div>
+        <div class="card col-3">
+            <button class="mt-2">Add Extra Players</button>
         </div>
     </div>
 </div>

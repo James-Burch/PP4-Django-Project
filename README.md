@@ -10,3 +10,7 @@ Prior to starting this project deciding what to base it on was hard as I had man
 
 ### Using Bootstrap
 - I decided to import a basic bootstrap navbar from the bootstrap website then modify it to the needs of my site.
+
+
+### Images
+- All images used on this site are from google images

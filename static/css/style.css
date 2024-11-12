@@ -74,6 +74,10 @@ body {
     color: white;
 }
 
+.text-green {
+    color: #9EB25D;
+}
+
 .parallax {
     /* The image used */
     background-image: url("/static/images/course-image1.jpg");
@@ -121,3 +125,6 @@ body {
     background-color: #343437;
     opacity: 80%;
 }
+
+/* ----------------------------- Booking page styling */
+
