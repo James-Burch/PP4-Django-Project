@@ -20,9 +20,9 @@ class Booking(models.Model):
     ]
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    date = models.ForeignKey(AvailableDate, on_delete=models.CASCADE, null=True)
-    time_slot = models.CharField(max_length=10, choices=TIME_SLOTS, null=True)
-    created_at = models.DateTimeField(auto_now_add=True, null=True)
+    date = models.ForeignKey(AvailableDate, on_delete=models.CASCADE)
+    time_slot = models.CharField(max_length=10, choices=TIME_SLOTS)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         unique_together = ('date', 'time_slot')

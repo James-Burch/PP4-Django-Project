@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="card col-5">
-            <h1>Book a Time Slot</h1>
+            <h1 class="text-white">Book a Time Slot</h1>
             <form method="post">
                 {% csrf_token %}
                 {{ form.date.label_tag }} {{ form.date }}
