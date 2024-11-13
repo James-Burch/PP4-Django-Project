@@ -5,26 +5,33 @@
         <h1 class="text-white fw-bold m-5">Welcome to Burch's Golf Club, come and play a round now!</h1>
     </div>
 </div>
-<div class="container">
-    <div class="row d-flex justify-content-space-evenly">
-        <div class="col-lg-4 col-12">
+<div class="container-fluid">
+    <div class="row d-flex justify-content-space-evenly info-box text-center">
+        <div class="col-lg-4 col-12 text-green text-center">
             <h2>Where can you find us?</h2>
-            <ul>
+            <hr>
+            <ul class="no-bullets">
                 <li>
-                    Postcode :
+                    Postcode : CB25
                 </li>
                 <li>
-                    City :
+                    City : Cambridge
                 </li>
                 <li>
-                    Road :
+                    Road : London Rd
                 </li>
             </ul>
+            <hr>
         </div>
         <div class="col-lg-4 col-12">
-            Insert google map
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d78254.4985806053!2d0.037586744176357025!3d52.198813404241804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d85d89f32a012d%3A0x63a320e1a35e3d21!2sCambridge!5e0!3m2!1sen!2suk!4v1731529787953!5m2!1sen!2suk"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
-        <div class="col-lg-4 col-12"></div>
+        <div class="col-lg-4 col-12">
+            
+        </div>
     </div>
 </div>
-    {% endblock %}
+{% endblock %}

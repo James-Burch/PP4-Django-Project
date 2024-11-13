@@ -123,7 +123,6 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
 }
-
 /* ----------------------------- Home page styling */
 
 .course-bg-image {
@@ -137,6 +136,10 @@ body {
 .overlay-md {
     background-color: #343437;
     opacity: 80%;
+}
+
+.info-box {
+    border: 2px solid #9EB25D;
 }
 
 /* ----------------------------- Booking page styling */
