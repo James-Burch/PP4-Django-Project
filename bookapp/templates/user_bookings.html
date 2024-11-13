@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Your Bookings{% endblock %}
+
+{% block content %}
+<h2>Your Bookings</h2>
+
+{% if bookings %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Booking Date</th>
+            <th>Time Slot</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for booking in bookings %}
+        <tr>
+            <td>{{ booking.date }}</td>
+            <td>{{ booking.time_slot }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>You have no bookings at the moment.</p>
+{% endif %}
+{% endblock %}

@@ -5,6 +5,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.forms import inlineformset_factory
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.contrib.messages import constants as messages
 from .forms import BookingForm
 
 # Create your views here.
