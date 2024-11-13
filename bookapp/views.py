@@ -18,6 +18,8 @@ def booking(request):
     form = BookingForm()
     return render(request, "bookingpage.html", {'form': form})
 
+def booking_confirmation(request):
+    return render(request, 'booking_confirmation.html')
 
 def register(request):
     form = UserCreationForm()
@@ -31,23 +33,37 @@ def create_booking(request):
         if form.is_valid():
             booking = form.save(commit=False)
             booking.user = request.user
-            booking.post = post
-            # Check if slot is already booked
+            # Check if the time slot is already booked
             if Booking.objects.filter(date=booking.date, time_slot=booking.time_slot).exists():
-                messages.add_message(request, message.ERROR, "This time slot is already booked. Please choose another.")
+                messages.error(request, "This time slot is already booked. Please choose another.")
             else:
                 booking.save()
-                messages.add_message(request, message.SUCCESS,
-                'Booking Successful')
-                return redirect('booking_confirmation')
+                messages.success(request, 'Booking Successful')
+                return redirect('booking_confirmation')  # Redirect to a booking confirmation page
     else:
-        booking.save()
-        messages.add_message(request, message.SUCCESS,'Booking Successful')
         form = BookingForm()
+        
     return render(request, 'bookingpage.html', {'form': form})
 
 @login_required
 def user_bookings(request):
-    # Retrieve bookings for the logged-in user
     bookings = Booking.objects.filter(user=request.user)
-    return render(request, 'user_bookings.html', {'bookings': bookings})
+
+    if request.method == 'POST':
+        booking_id = request.POST.get("booking_id")
+        booking = get_object_or_404(Booking, id=booking_id, user=request.user)
+        form = BookingForm(request.POST, instance=booking)
+
+        if form.is_valid():
+            new_date = form.cleaned_data['date']
+            new_time_slot = form.cleaned_data['time_slot']
+            if Booking.objects.filter(date=new_date, time_slot=new_time_slot).exclude(id=booking_id).exists():
+                messages.error(request, "This time slot is already booked. Please choose another.")
+            else:
+                form.save()
+                messages.success(request, 'Booking updated successfully.')
+                return redirect('user_bookings')  # Reload the page to show updated bookings
+    else:
+        booking_forms = [(booking, BookingForm(instance=booking)) for booking in bookings]
+
+    return render(request, 'user_bookings.html', {'booking_forms': booking_forms})

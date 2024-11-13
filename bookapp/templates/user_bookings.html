@@ -5,24 +5,38 @@
 {% block content %}
 <h2 class="text-green mt-10">Your Bookings</h2>
 
-{% if bookings %}
-<table class="table">
-    <thead>
-        <tr>
-            <th>Booking Date</th>
-            <th>Time Slot</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for booking in bookings %}
-        <tr>
-            <td>{{ booking.date }}</td>
-            <td>{{ booking.time_slot }}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+{% if booking_forms %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Booking Date</th>
+                <th>Time Slot</th>
+                <th>Edit Booking</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for booking, form in booking_forms %}
+            <tr>
+                <form method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="booking_id" value="{{ booking.id }}">
+
+                    <td>
+                        {{ form.date }}
+                    </td>
+                    <td>
+                        {{ form.time_slot }}
+                    </td>
+                    <td>
+                        <button type="submit" class="btn btn-sm btn-primary">Save Changes</button>
+                    </td>
+                </form>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% else %}
-<p>You have no bookings at the moment.</p>
+    <p>You have no bookings at the moment.</p>
 {% endif %}
+
 {% endblock %}
