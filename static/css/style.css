@@ -99,7 +99,7 @@ body {
 }
 
 .bg-book-btn {
-    background-color: #42799E;
+    background-color: #7CAD0B;
     border-radius: 10px;
 }
 
@@ -132,6 +132,11 @@ body {
 /* ----------------------------- Booking page styling */
 
 .booking-info-box {
-    border: #9EB25D;
+    border: 2px #9EB25D;
     border-style: solid;
+    border-radius: 5px;
+}
+
+.bg-green {
+    background-color: #9EB25D;
 }
