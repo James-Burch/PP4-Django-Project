@@ -11,47 +11,48 @@
         time at our golf course and get confirmation instantly.</p>
 </div>
 <hr>
-<div class="container-fluid bg-green text-white">
+<div class="container-fluid bg-green text-white pt-2">
     <h1 class="text-center">Book a Tee</h1>
     <hr class="text-white">
     <!-- Displays the information of the user that is logged in -->
     <div class="row mt-4 d-flex justify-content-space-evenly">
         <div class="card col-12 col-lg-4">
-            <div class="card-body text-white">
+            <div class="card-body text-white text-center">
                 <h3 class="card-title">Your Information</h3>
                 <ul class="no-bullets">
                     <li>Name: {{ user }}</li>
                 </ul>
             </div>
         </div>
-        <div class="card col-12 col-lg-5">
+        <div class="card col-12 col-lg-5 text-center">
             <form method="post">
                 {% csrf_token %}
                 {{ form.date.label_tag }} {{ form.date }}
                 {{ form.time_slot.label_tag }} {{ form.time_slot }}
-                <button type="submit" class="text-white bg-green">Book</button>
+                <button type="submit" class="text-green book-btn">Book</button>
             </form>
         </div>
 
         <div class="card col-12 col-lg-3">
-            <button class="mt-2">Add Extra Players</button>
+            <button class="mt-2 book-btn">Add Extra Players</button>
         </div>
         <hr class="text-white">
     </div>
 </div>
-<div class="container text-center pb-5">
+<div class="container text-center">
     <div class="row mt-2 d-flex justify-content-space-evenly booking-info-box">
         <div class="col-12 col-lg-4 text-green">
-            <h3 class="mb-2">Green Fees</h3>
+            <h3 class="mb-2 pt-2">Green Fees</h3>
+            <hr>
             <p>At Burch's Golf Course, we offer a variety of green fee options to suit every golfer, whether you’re
                 here for a quick round or a full day of play. Our fees vary depending on the time of day and week:
-            <ul>
-                <li>
+            <ul class="text-start">
+                <li class="pb-2">
                     <strong>Weekday costs:</strong>
                     9 Holes: £25 per person
                     18 Holes: £45 per person
                 </li>
-                <li>
+                <li class="pb-2">
                     <strong>Weekend costs:</strong>
                     9 Holes: £35 per person
                     18 Holes: £65 per person
@@ -65,16 +66,17 @@
             </p>
         </div>
         <div class="col-12 col-lg-4 bg-green text-white">
-            <h3>Golf Buggies</h3>
+            <h3 class="pt-2">Golf Buggies</h3>
+            <hr class="text-white">
             <p>
             <ul>
-                <li>
+                <li class="pb-2">
                     Buggies are available to rent upon arrival at the clubhouse. Our fleet of buggies
                     ensures a comfortable and enjoyable experience on the course, allowing you to focus on your game
                     while
                     easily navigating between holes.
                 </li>
-                <li>Buggies work on a first come first serve basis and booking is not available currently.
+                <li class="pb-2">Buggies work on a first come first serve basis and booking is not available currently.
                 </li>
                 <li>
                     There are 6 buggies available costing £25 per round ontop of the green fee.
@@ -83,35 +85,29 @@
             </p>
         </div>
         <div class="col-12 col-lg-4 text-green">
-            <h3>Practise Area</h3>
-            <p>Warm up and perfect your swing before hitting the course! At [Your Golf Club Name], we’re pleased to
-                offer a dedicated practice area where you can prepare for your round and refine your technique. Our
+            <h3 class="pt-2">Practise Area</h3>
+            <hr>
+            <p>Warm up and perfect your swing before hitting the course! At Burch's Golf Club, we’re pleased to
+                offer a dedicated practice area. Our
                 practice facilities include:
-            <ul>
+            <ul class="text-start">
                 <li class="mb-2">
                     <strong>Driving Range:</strong> Fine-tune your long shots with ample space to practice drives and
                     full swings.
                 </li>
-                <li class="mb-2"><strong>Putting Green:</strong> Get a feel for the greens with our putting area, designed to mimic
-                    course conditions.</li>
-                <li class="mb-2"><strong>Chipping Area:</strong> Perfect your short game with dedicated space for practicing chips and
-                    bunker shots.</li>
+                <li class="mb-2">
+                    <strong>Putting Green:</strong> Get a feel for the greens with our putting area, designed to mimic
+                    course conditions.
+                </li>
+                <li class="mb-2">
+                    <strong>Chipping Area:</strong> Perfect your short game with dedicated space for practicing chips
+                    and
+                    bunker shots.
+                </li>
             </ul>
             </p>
         </div>
     </div>
 </div>
-<script>
-    // Show footer after scrolling 100px down the page
-    window.addEventListener('scroll', function() {
-        const footer = document.getElementById('footer');
-        
-        // Check if the user has scrolled down more than 100px
-        if (window.scrollY > 100) {
-            footer.style.display = 'block';
-        } else {
-            footer.style.display = 'none';
-        }
-    });
-</script>
+
 {% endblock %}

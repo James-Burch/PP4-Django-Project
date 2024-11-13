@@ -31,16 +31,17 @@ def create_booking(request):
             booking = form.save(commit=False)
             booking.user = request.user
             booking.post = post
-            # # Check if slot is already booked
-            # if Booking.objects.filter(date=booking.date, time_slot=booking.time_slot).exists():
-            #     messages.add_message(request, message.ERROR, "This time slot is already booked. Please choose another.")
-            # else:
-            #     booking.save()
-            #     messages.add_message(request, message.SUCCESS,
-            #     'Booking Successful')
-            #     return redirect('booking_confirmation')
+            # Check if slot is already booked
+            if Booking.objects.filter(date=booking.date, time_slot=booking.time_slot).exists():
+                messages.add_message(request, message.ERROR, "This time slot is already booked. Please choose another.")
+            else:
+                booking.save()
+                messages.add_message(request, message.SUCCESS,
+                'Booking Successful')
+                return redirect('booking_confirmation')
     else:
         booking.save()
         messages.add_message(request, message.SUCCESS,'Booking Successful')
         form = BookingForm()
     return render(request, 'bookingpage.html', {'form': form})
+
