@@ -45,3 +45,8 @@ def create_booking(request):
         form = BookingForm()
     return render(request, 'bookingpage.html', {'form': form})
 
+@login_required
+def user_bookings(request):
+    # Retrieve bookings for the logged-in user
+    bookings = Booking.objects.filter(user=request.user)
+    return render(request, 'user_bookings.html', {'bookings': bookings})
