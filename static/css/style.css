@@ -111,6 +111,9 @@ body {
     font-weight: bold;
 }
 
+.navbar-sh {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 /* ----------------------------- Home page styling */
 
 .course-bg-image {
@@ -128,3 +131,7 @@ body {
 
 /* ----------------------------- Booking page styling */
 
+.booking-info-box {
+    border: #9EB25D;
+    border-style: solid;
+}

@@ -6,16 +6,16 @@
 </div>
 <hr>
 <div class="text-center m-5 text-green">
-        <h2>Members and Visitors Tee Time Booking</h2>
-        <p>Welcome to the Burch's Golf Course online tee time booking service. This service allows you to book a tee
-            time at our golf course and get confirmation instantly.</p>
+    <h2>Members and Visitors Tee Time Booking</h2>
+    <p>Welcome to the Burch's Golf Course online tee time booking service. This service allows you to book a tee
+        time at our golf course and get confirmation instantly.</p>
 </div>
 <hr>
 <div class="container-fluid bg-green">
     <h1 class="text-white text-center">Book a Tee</h1>
     <!-- Displays the information of the user that is logged in -->
     <div class="row mt-4 d-flex justify-content-space-evenly">
-        <div class="card col-4">
+        <div class="card col-12 col-lg-4">
             <div class="card-body">
                 <h3 class="card-title">Your Information</h3>
                 <ul class="no-bullets">
@@ -23,7 +23,7 @@
                 </ul>
             </div>
         </div>
-        <div class="card col-5">
+        <div class="card col-12 col-lg-5">
             <form method="post">
                 {% csrf_token %}
                 {{ form.date.label_tag }} {{ form.date }}
@@ -32,22 +32,52 @@
             </form>
         </div>
 
-        <div class="card col-3">
+        <div class="card col-12 col-lg-3">
             <button class="mt-2">Add Extra Players</button>
         </div>
     </div>
 </div>
 <div class="container text-center">
     <div class="row pt-2 d-flex justify-content-space-evenly">
-        <div class="col-4">
-            <h3>Green Fees</h3>
-            <p></p>
+        <div class="col-12 col-lg-4 booking-info-box">
+            <h3 class="mb-2">Green Fees</h3>
+            <p>At Burch's Golf Course, we offer a variety of green fee options to suit every golfer, whether you’re
+                here for a quick round or a full day of play. Our fees vary depending on the time of day and week:
+            <ul>
+                <li>
+                    Weekday costs:
+                    9 Holes: £25 per person
+                    18 Holes: £45 per person</li>
+                <li>Weekend costs:
+                    9 Holes: £35 per person
+                    18 Holes: £65 per person
+                </li>
+                <li>Evening costs:
+                    Play until sunset: £25
+                </li>
+            </ul>
+
+            </p>
         </div>
-        <div class="col-4">
+        <div class="col-12 col-lg-4 booking-info-box">
             <h3>Golf Buggies</h3>
-            <p></p>
+            <p>
+            <ul>
+                <li>
+                    Buggies are available to rent upon arrival at the clubhouse. Our fleet of buggies
+                    ensures a comfortable and enjoyable experience on the course, allowing you to focus on your game
+                    while
+                    easily navigating between holes.
+                </li>
+                <li>Buggies work on a first come first serve basis and booking is not available currently.
+                </li>
+                <li>
+                    There are 6 buggies available costing £25 per round ontop of the green fee.
+                </li>
+            </ul>
+            </p>
         </div>
-        <div class="col-4">
+        <div class="col-12 col-lg-4 booking-info-box">
             <h3>Practise Area</h3>
             <p></p>
         </div>
