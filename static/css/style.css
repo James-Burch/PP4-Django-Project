@@ -161,3 +161,18 @@ body {
     transition: transform 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+/* ----------------------------- Logout page styling */
+
+.logout-bg {
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    border: 2px solid #9EB25D;
+    max-width: 500px;
+    padding: 20px 0;
+}
+
+.logout-container {
+    margin-top: 25%;
+    margin-bottom: 25%;
+}
