@@ -173,6 +173,33 @@ body {
 }
 
 .logout-container {
-    margin-top: 25%;
-    margin-bottom: 25%;
+    margin-top: 30vh;
+}
+
+/* ----------------------------- Signup page styling */
+
+.signup-bg {
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    border: 2px solid #9EB25D;
+    min-width: 50%;
+    padding: 20px 0;
+}
+
+.signup-container {
+    margin-top: 10vh;
+}
+
+/* ----------------------------- Signin page styling */
+
+.signin-bg {
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    border: 2px solid #9EB25D;
+    max-width: 500px;
+    padding: 20px 0;
+}
+
+.signin-container {
+    margin-top: 10vh;
 }
