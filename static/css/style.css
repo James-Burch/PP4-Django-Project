@@ -122,6 +122,8 @@ body {
     transition: transform 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
+    color: white;
+    background-color: #9EB25D;
 }
 /* ----------------------------- Home page styling */
 
@@ -205,4 +207,10 @@ body {
 
 .signin-container {
     margin-top: 10vh;
+}
+
+/* ----------------------------- My bookings page styling */
+
+.mt-10 {
+    margin-top: 75px;
 }
