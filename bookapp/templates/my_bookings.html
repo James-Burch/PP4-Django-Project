@@ -3,76 +3,34 @@
 {% block title %}Your Bookings{% endblock %}
 
 {% block content %}
-<!-- <h2 class="text-green mt-10">Your Bookings</h2>
 
-{% if booking_forms %} -->
-    <!-- <table class="table">
-        <thead>
-            <tr>
-                <th>Booking Date</th>
-                <th>Time Slot</th>
-                <th>Edit Booking</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for booking, form in booking_forms %}
-            <tr>
-                <form method="post">
-                    {% csrf_token %}
-                    <input type="hidden" name="booking_id" value="{{ booking.id }}">
-
-                    <td>
-                        {{ form.date }}
-                    </td>
-                    <td>
-                        {{ form.time_slot }}
-                    </td>
-                    <td>
-                        <button type="submit" class="btn btn-sm btn-primary">Save Changes</button>
-                    </td>
-                </form>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-{% else %}
-    <p>You have no bookings at the moment.</p>
-{% endif %} -->
-
-<h2 class="text-green mt-10">My Bookings</h2>
-    {% for booking in bookings %}
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Booking Date</th>
-                <th>Time Slot</th>
-                <th>Edit Booking</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>{{ booking.date }}</td>
-                <td>{{ booking.time }}</td>
-                <td><a href="{% url 'edit_booking' booking.id %}">Edit</a></td>
-            </tr>
-        </tbody>
-
-
-
-
-
-
-
-
-
-        <!-- <li>
-            {{ booking.date }} {{ booking.time }} 
-            <a href="{% url 'edit_booking' booking.id %}">Edit</a>
-            <ul>
-                {% for player in booking.players.all %}
+<h2 class="text-green mt-10 text-center">My Bookings</h2>
+<hr>
+<table class="bk-table">
+    <thead>
+        <tr>
+            <th>Account Name</th>
+            <th>Players</th>
+            <th>Date</th>
+            <th>Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for booking in bookings %}
+        <tr>
+            <td>{{ booking.user.username }}</td>
+            <td>
+                <ul>
+                    {% for player in booking.players.all %}
                     <li>{{ player.name }}</li>
-                {% endfor %}
-            </ul>
-        </li>
-    {% endfor %} -->
+                    {% endfor %}
+                </ul>
+            </td>
+            <td>{{ booking.date }}</td>
+            <td>{{ booking.time }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<hr>
 {% endblock %}

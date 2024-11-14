@@ -214,3 +214,21 @@ body {
 .mt-10 {
     margin-top: 75px;
 }
+
+.bk-table {
+    width: 100%;
+    background-color: #9EB25D;
+    color: white;
+}
+
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    border: 2px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
