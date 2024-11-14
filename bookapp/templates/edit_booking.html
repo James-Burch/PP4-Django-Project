@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Booking{% endblock %}
+
+{% block content %}
+<h2>Edit Booking</h2>
+<form method="post">
+    {% csrf_token %}
+    
+    <h3>Update Booking Details</h3>
+    {{ booking_form.as_p }}
+    <button type="submit" name="save_changes" class="btn btn-primary">Save Changes</button>
+
+    <h3>Add a Player</h3>
+    {{ player_form.as_p }}
+    <button type="submit" name="add_player" class="btn btn-secondary">Add Player</button>
+    
+    <h3>Delete Booking</h3>
+    <button type="submit" name="delete_booking" class="btn btn-danger" onclick="return confirm('Are you sure you want to cancel this booking?');">Cancel Booking</button>
+    
+    <a href="{% url 'my_bookings' %}" class="btn btn-secondary">Back to My Bookings</a>
+</form>
+
+
+{% endblock %}

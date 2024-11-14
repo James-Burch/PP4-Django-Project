@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Booking, Player
 from .forms import BookingForm, PlayerForm
 from django.contrib.auth.decorators import login_required
@@ -48,15 +48,34 @@ def my_bookings(request):
 
 @login_required
 def edit_booking(request, booking_id):
-    booking = Booking.objects.get(id=booking_id, user=request.user)
+    booking = get_object_or_404(Booking, id=booking_id, user=request.user)
+    
     if request.method == 'POST':
-        booking_form = BookingForm(request.POST, instance=booking)
-        player_formset = PlayerForm(request.POST, instance=booking)
-        if booking_form.is_valid() and player_formset.is_valid():
-            booking_form.save()
-            player_formset.save()
+        if 'save_changes' in request.POST:
+            booking_form = BookingForm(request.POST, instance=booking)
+            if booking_form.is_valid():
+                booking_form.save()
             return redirect('my_bookings')
+        
+        elif 'add_player' in request.POST:
+            player_form = PlayerForm(request.POST)
+            if player_form.is_valid():
+                new_player = player_form.save(commit=False)
+                new_player.booking = booking
+                new_player.save()
+            return redirect('edit_booking', booking_id=booking_id)
+        
+        elif 'delete_booking' in request.POST:
+            # Skip form validation and delete the booking
+            booking.delete()
+            return redirect('my_bookings')
+    
     else:
         booking_form = BookingForm(instance=booking)
-        player_formset = PlayerForm(instance=booking)
-    return render(request, 'edit_booking.html', {'booking_form': booking_form, 'player_formset': player_formset})
+        player_form = PlayerForm()  # Only create an empty form on GET requests
+
+    return render(request, 'edit_booking.html', {
+        'booking_form': booking_form,
+        'player_form': player_form,
+        'booking': booking
+    })
