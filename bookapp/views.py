@@ -66,13 +66,12 @@ def edit_booking(request, booking_id):
             return redirect('edit_booking', booking_id=booking_id)
         
         elif 'delete_booking' in request.POST:
-            # Skip form validation and delete the booking
             booking.delete()
             return redirect('my_bookings')
     
     else:
         booking_form = BookingForm(instance=booking)
-        player_form = PlayerForm()  # Only create an empty form on GET requests
+        player_form = PlayerForm()  
 
     return render(request, 'edit_booking.html', {
         'booking_form': booking_form,
