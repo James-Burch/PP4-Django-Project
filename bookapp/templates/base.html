@@ -21,7 +21,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg  bg-green fixed-top navbar-sh">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/">Burchs' Golf Club</a>
+            <a class="navbar-brand fw-bold text-white" href="/">Burchs' Golf Club</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -30,17 +30,17 @@
                 <div class="navbar-nav">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active expand-btn" aria-current="page" href="/">Home</a>
+                            <a class="nav-link active expand-btn text-white" aria-current="page" href="/">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active bg-book-btn expand-btn" href="/booking">Book a Tee</a>
+                            <a class="nav-link active bg-book-btn expand-btn fw-bold text-white" href="/booking">Book a Tee</a>
                         </li>
                         {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link active expand-btn" href="{% url 'my_bookings' %}">My Bookings</a>
+                            <a class="nav-link active expand-btn text-white" href="{% url 'my_bookings' %}">My Bookings</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active expand-btn {% if request.path == logout_url %}active{% endif %}" aria-current="page"
+                            <a class="nav-link active expand-btn text-white{% if request.path == logout_url %}active{% endif %}" aria-current="page"
                                 href="{% url 'account_logout' %}">Signout</a>
                         </li>
                         {% else %}
@@ -82,6 +82,7 @@
 <footer class="pb-2">
     <div class="container">
         <div class="row text-center p-5">
+            <h3 class="fw-bold text-center text-green p-2">Find Us On!:</h3>
             <div class="col-4">
                 <a href="https://www.facebook.com/" rel="noopener" target="_blank"><i class="fab fa-facebook fa-2x social-icons"></i></a>
             </div>
