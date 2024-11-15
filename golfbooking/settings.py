@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-93$t(osv6+6ty*qlfq+p4f^$cx+bs91u^$eh761_)ila-ogohr
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['8000-jamesburch-pp4djangopro-ku1jfkpmxwq.ws-eu116.gitpod.io', '8000-jamesburch-pp4djangopro-38eg5bmazpf.ws-eu116.gitpod.io', '.herokuapp.com']
+ALLOWED_HOSTS = ['8000-jamesburch-pp4djangopro-ku1jfkpmxwq.ws-eu116.gitpod.io', '8000-jamesburch-pp4djangopro-38eg5bmazpf.ws-eu116.gitpod.io', 'pp4-django-project.herokuapp.com']
 
 CSRF_TRUSTED_ORIGINS = ['https://8000-jamesburch-pp4djangopro-ku1jfkpmxwq.ws-eu116.gitpod.io']
 
