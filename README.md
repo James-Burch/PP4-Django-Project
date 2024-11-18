@@ -3,7 +3,7 @@
 ![Screenshot of the home page of the site](static/images/homepage.png)
 
 ## Site Introduction
-I have created this golf booking system site as I play and enjoy golf myself. I like to create my projects around my own personal interests as I am able to put more into it and always want to add more features to improve it. The site is a place where users can book a tee time to play a round of golf and share their scores from the round to compare to other users. The project utilites Django and Python code to allow the user to book a time, edit their booking, cancel their booking and upload scores to the leaderboard. The project has an admin account linked which can select what dates and times are available for users to book, once the time has been booked it can not be booked by another user. Once the user has finished their round they can upload the score they got on their round to be displayed on the leaderboard. 
+I have created this golf booking system site as I play and enjoy golf myself. I like to create my projects around my own personal interests as I am able to put more into it and always want to add more features to improve it. The site is a place where users can book a tee time to play a round of golf, add players too, change the date/time and cancel bookings. The project utilites Django, Bootstrap, HTML Templates, CSS and Python code to allow the user to book a time, edit their booking, cancel their booking and upload scores to the leaderboard. The project has an admin account linked which can select what dates and times are available for users to book.
 
 - Burch's Golf Club/Course does not actually exist it is made up using my surname for the purpose of this project.
 
