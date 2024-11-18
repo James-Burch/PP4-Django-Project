@@ -27,8 +27,21 @@ Prior to starting this project deciding what to base it on was hard as I had man
 - All images used on this site are from google images and are random courses as Burch's Golf Course does not exist.
 
 ## Features
-
-
+### Home Page
+- The home page on this project has been kept simple as this is not the main focus of my project however it serves the purpose of welcoming site users giving them a welcome to the club/website and the course location/address.
+- It has been made using bootstrap just like all of the HTML structure on this project, as a result it is fully responsive on all screen sizes utilising a collapsable navbar on smaller devices.
+![Image to show the home page](static/images/homepage.png)
+### Booking Page
+- The booking page has a login_required attached to the views.py file to ensure that it can only display when an authenticated user is logged in, otherwise the user will be met with the signin page before being able to access the booking page.
+- Once the user is signed in then the booking page is displayed, the user is then met with a nice image of the course with a small image with initial information about member and visitor booking.
+- Below this, there is a booking form to be filled out alongisde booking instructions and 'your information' this just displays the signed in users account name as they do not require any other information to create an account for the purpose of this project. The booking form only requires the user to select a date and time to submit.
+![Image to show booking form page when logged in](static/images/bookingform.png)
+The above image shows the booking page when a user is logged in
+### My Bookings Page
+- Once a user has submitted their booking form and it is successful they will then be redirected to the 'my bookings' page which will display any current or past bookings they have made. I have displayed the information in a table giving each booking its own row.
+![Image to show the my booking page with some test bookings](static/images/mybookingpage.png)
+- The my bookings page has an 'edit/cancel' button attached at the end of each booking, this is linked to the edit booking page and my edit booking views.py code to allow a user when logged in to change anything about their booking and even delete/cancel it.
+![Image to show the edit booking screen](static/images/editbookingpage.png)
 ## Using Agile
 
 ## Testing
