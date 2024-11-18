@@ -19,10 +19,10 @@
             <div class="col-12 col-lg-6 mt-3">
                 <h3>Delete Booking</h3>
                 <hr>
-                <button type="submit" name="delete_booking" class="btn btn-danger expand-btn"
+                <div><button type="submit" name="delete_booking" class="btn btn-danger expand-btn"
                     onclick="return confirm('Are you sure you want to cancel this booking?');">Cancel Booking</button>
 
-                <a href="{% url 'my_bookings' %}" class="btn btn-secondary expand-btn mt-2">Back to My Bookings</a>
+                <a href="{% url 'my_bookings' %}" class="btn btn-secondary expand-btn mt-2">Back to My Bookings</a></div>
             </div>
         </div>
     </form>
