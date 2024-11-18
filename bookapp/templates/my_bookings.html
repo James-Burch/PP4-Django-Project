@@ -6,35 +6,50 @@
 
 <h2 class="text-green mt-10 text-center">My Bookings</h2>
 <hr>
-<table class="bk-table">
-    <thead>
-        <tr>
-            <th>Account Name</th>
-            <th>Extra Players</th>
-            <th>Date</th>
-            <th>Time</th>
-            <th>Add/Edit/Cancel</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for booking in bookings %}
-        <tr>
-            <td>{{ booking.user.username }}</td>
-            <td>
-                <ul>
-                    {% for player in booking.players.all %}
-                    <li>{{ player.name }}</li>
-                    {% endfor %}
-                </ul>
-            </td>
-            <td>{{ booking.date }}</td>
-            <td>{{ booking.time }}</td>
-            <td>
-                <a href="{% url 'edit_booking' booking.id %}" class="btn btn-warning">Edit/Cancel</a>
-            </td>
-        </tr>
+{% if messages %}
+    <div class="container-fluid text-green">
+        {% for message in messages %}
+            <div class="alert {% if message.tags %}alert-{{ message.tags }}{% else %}alert-info{% endif %} alert-dismissible fade show text-wrap" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
         {% endfor %}
-    </tbody>
-</table>
+    </div>
+{% endif %}
+<div class="container">
+    <div class="row">
+        <div class="col-12"><table class="bk-table">
+            <thead>
+                <tr>
+                    <th>Account Name</th>
+                    <th>Extra Players</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Add/Edit/Cancel</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for booking in bookings %}
+                <tr>
+                    <td>{{ booking.user.username }}</td>
+                    <td>
+                        <ul>
+                            {% for player in booking.players.all %}
+                            <li>{{ player.name }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                    <td>{{ booking.date }}</td>
+                    <td>{{ booking.time }}</td>
+                    <td>
+                        <a href="{% url 'edit_booking' booking.id %}" class="btn btn-warning">Edit/Cancel</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table></div>
+    </div>
+</div>
+
 <hr>
 {% endblock %}

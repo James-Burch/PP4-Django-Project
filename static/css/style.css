@@ -88,6 +88,17 @@ body {
     background-size: cover;
 }
 
+
+
+.message-box {
+    background-color: white;
+    color: #455526;
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
 /* ----------------------------- base.html styling */
 
 .bg-green {
@@ -130,6 +141,11 @@ body {
     background-color: #455526;
 }
 /* ----------------------------- Home page styling */
+.hero-text {
+    background-color: #455526;
+    padding: 10px;
+    border-radius: 30px;
+}
 
 .course-bg-image {
     background-image: url("/static/images/course-image.jpg");

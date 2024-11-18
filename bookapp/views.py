@@ -3,6 +3,7 @@ from .models import Booking, Player
 from .forms import BookingForm, PlayerForm
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
+from django.contrib import messages
 
 # Create your views here.
 
@@ -34,6 +35,7 @@ def booking_view(request):
             player = player_form.save(commit=False)
             player.booking = booking
             player.save()
+            messages.success(request, 'Your booking has been successfully created!')
             return redirect('my_bookings')
     else:
         booking_form = BookingForm()
