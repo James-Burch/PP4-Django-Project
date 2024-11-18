@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['8000-jamesburch-pp4djangopro-ku1jfkpmxwq.ws-eu116.gitpod.io', '8000-jamesburch-pp4djangopro-38eg5bmazpf.ws-eu116.gitpod.io', '.herokuapp.com']
 

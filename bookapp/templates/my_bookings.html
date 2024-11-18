@@ -3,24 +3,29 @@
 {% block title %}Your Bookings{% endblock %}
 
 {% block content %}
-
 <h2 class="text-green mt-10 text-center">My Bookings</h2>
 <hr>
+
+<!-- Display messages -->
 {% if messages %}
 <div class="container-fluid text-green">
     {% for message in messages %}
-    <div class="alert {% if message.tags %}alert-{{ message.tags }}{% else %}alert-info{% endif %} alert-dismissible fade show text-wrap"
-        role="alert">
+    <div 
+        class="alert {% if message.tags %}alert-{{ message.tags }}{% else %}alert-info{% endif %} 
+               alert-dismissible fade show text-wrap" role="alert">
         {{ message }}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     {% endfor %}
 </div>
 {% endif %}
+
 <div class="container">
     <div class="row">
         <div class="col-12">
             <div class="table-responsive">
+                <!-- Bookings Table -->
+                {% if bookings %}
                 <table class="bk-table">
                     <thead>
                         <tr>
@@ -51,6 +56,9 @@
                         {% endfor %}
                     </tbody>
                 </table>
+                {% else %}
+                <p class="text-center mt-4 text-green fw-bold">You have no bookings to view or edit.</p>
+                {% endif %}
             </div>
         </div>
     </div>
