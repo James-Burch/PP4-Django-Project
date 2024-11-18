@@ -37,38 +37,50 @@ Prior to starting this project deciding what to base it on was hard as I had man
 - Below this, there is a booking form to be filled out alongisde booking instructions and 'your information' this just displays the signed in users account name as they do not require any other information to create an account for the purpose of this project. The booking form only requires the user to select a date and time to submit.
 ![Image to show booking form page when logged in](static/images/bookingform.png)
 The above image shows the booking page when a user is logged in
+- The booking page also has some information below the booking form for information such as green fees, buggy hire and the practise area so that users know what to expect upon arrival.
+![Image to show the 3 information boxes on this page](static/images/bookingpageinfo.png)
 ### My Bookings Page
 - Once a user has submitted their booking form and it is successful they will then be redirected to the 'my bookings' page which will display any current or past bookings they have made. I have displayed the information in a table giving each booking its own row.
 ![Image to show the my booking page with some test bookings](static/images/mybookingpage.png)
 - The my bookings page has an 'edit/cancel' button attached at the end of each booking, this is linked to the edit booking page and my edit booking views.py code to allow a user when logged in to change anything about their booking and even delete/cancel it.
 ![Image to show the edit booking screen](static/images/editbookingpage.png)
 ## Using Agile
+- Requirements were captured as user stories as issues and put into my 'project' on github for tracking progress. They describe features from the end-user's perspective.
+- The project was broken down into smaller, manageable iterations. I tried to not move onto the next part of the project until I was satisfied with the current part.
+- Code was committed regularly to the repository ensuring that the project was always in a testable state.
 
 ## Testing
 
+### Manual Testing Table
+
 | What I am testing? | How I tested it| Expected Outcome | Result |
 | -- | -- | -- | -- |
-| What I am testing? | How I tested it| Expected Outcome | Result |
-| What I am testing? | How I tested it| Expected Outcome | Result |
-| What I am testing? | How I tested it| Expected Outcome | Result |
-| What I am testing? | How I tested it| Expected Outcome | Result |
+| Nav links work | Load the deployed project and click each link | Every link lands on the correct page | Pass |
+| Social media links work | Load the deployed project and click each link | Every link lands on the correct page | Pass |
+| There is no horizontal scroll | Load the deployed project and inspect (dev tools) check every page on different screen sizes | No horizontal scroll on any display or device | Pass |
+| Signin/Signup allows a user to login or signup | Try to signin before creating an account then try to create an account and sign in after | Firstly it should not sign in and prompt to create an account then signin with them details | Pass |
+| Booking form allows submit without adding players | Try to make a booking without adding players | Form should submit and booking appear in my booking page with extra players column empty | Pass |
+| -- | -- | -- | -- |
 
 
 ## Bugs and Fixes
 
 - I had a problem when making my django models for making a booking where once a user had filled out the booking form it was not saving properly to the database and creating the booking, this made me rethink and rewrite my code for the whole booking process to solve it. Once I had re written the code it was working how I wanted it too.
 
+- There is currently a bug where the successfully signed in alert stays on the page creating an area of blank space between the booking page top image and the navbar that should not be there and it is not possible to scroll up and delete this alert
+
 ### Problems I Had
 - Getting the 'book' submit button on the create_booking form view to work, I was able to create/add a booking in the admin view and have it display in the my bookings section when a user was logged in but not able to save a booking correctly when signed in on the 'book a tee' page. 
 
 ### Deployment
+- For deploying this project their are many more steps to previous projects. I personally had some issues when trying to get my static files to work on my deployed project through heroku. I later found my issue after about 30-45 minutes of searching that I had not removed the 'collect_static' from my Config Vars on settings of my heroku app.
 
-<!-- These are the steps I followed to deploy my live project
-- Firstly I had to type 'pip3 freeze > requirements.txt' into the terminal in my code space to add the requirements for Heroku to download to run my program so that it works.
-- Next I went onto the Heroku website, went to my dashboard and selected 'Create New App' from the 'New' dropdown menu in the top right.
-- I then named my app and selected 'create new app' to continue, I then selected the settings tab
-- Next I selected the deploy tab, I then linked my github profile and searched for my project repository and linked it ready for deployment.
-- Finally I opted to have automatic deploys so that my live program updates each time I push my code to github. I then clicked deploy branch to get my live site. -->
+Steps for deployment:
+- Debug must be set to FALSE in the settings.py file
+1. Firstly to deploy a project you must create an app on heroku and link your github repository
+2. Next add your config for your database URL and secret_key that is in your settings.py file of your django project. Also add a collect static config var which will later need removing.
+3. To ready your code to deploy you must use pip3 to install gunicorn and whitenoise (freeze these to local - requirements.txt file), add a Procfile file and add heroku to the allowed hosts in settings.py.
+4.  
 
 Link to the live site : https://pp4-django-project-082841c8663e.herokuapp.com/
 
