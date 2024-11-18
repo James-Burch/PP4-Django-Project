@@ -6,25 +6,26 @@
 <div class="mt-10 container text-center text-green ">
     <h2>Edit Booking</h2>
     <hr>
-    
-<form method="post">
-    <div class="row">
-    {% csrf_token %}
-    <div class="col-12 col-lg-6">
-    <h3>Update Booking Details</h3>
-    <hr>
-    {{ booking_form.as_p }}
-    <button type="submit" name="save_changes" class="btn btn-primary expand-btn">Save Changes</button>
-</div>
-<div class="col-12 col-lg-6 mt-3">
-    <h3>Delete Booking</h3>
-    <hr>
-    <button type="submit" name="delete_booking" class="btn btn-danger expand-btn" onclick="return confirm('Are you sure you want to cancel this booking?');">Cancel Booking</button>
-    
-    <a href="{% url 'my_bookings' %}" class="btn btn-secondary expand-btn mt-2">Back to My Bookings</a>
-</div>
-</div>
-</form>
+
+    <form method="post">
+        <div class="row">
+            {% csrf_token %}
+            <div class="col-12 col-lg-6">
+                <h3>Update Booking Details</h3>
+                <hr>
+                {{ booking_form.as_p }}
+                <button type="submit" name="save_changes" class="btn btn-primary expand-btn">Save Changes</button>
+            </div>
+            <div class="col-12 col-lg-6 mt-3">
+                <h3>Delete Booking</h3>
+                <hr>
+                <button type="submit" name="delete_booking" class="btn btn-danger expand-btn"
+                    onclick="return confirm('Are you sure you want to cancel this booking?');">Cancel Booking</button>
+
+                <a href="{% url 'my_bookings' %}" class="btn btn-secondary expand-btn mt-2">Back to My Bookings</a>
+            </div>
+        </div>
+    </form>
 </div>
 
 {% endblock %}

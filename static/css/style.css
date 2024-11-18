@@ -92,6 +92,7 @@ body {
     color: red;
     margin-top: 5px;
 }
+
 /* ----------------------------- base.html styling */
 
 .bg-green {
@@ -133,6 +134,7 @@ body {
     color: white;
     background-color: #455526;
 }
+
 /* ----------------------------- Home page styling */
 .hero-text {
     background-color: #455526;
@@ -219,10 +221,23 @@ body {
     margin-top: 75px;
 }
 
+
+/* Make the table have a scroll wheel so that on small screens it does not create horizontal scroll for the whole page */
 .bk-table {
     width: 100%;
+    overflow-x: auto;
+    display: block;
+    table-layout: auto;
     background-color: #455526;
     color: white;
+}
+
+.table-responsive .bk-table {
+    display: table;
+}
+
+table {
+    table-layout: auto;
 }
 
 td {
