@@ -34,7 +34,7 @@ def booking_view(request):
             player = player_form.save(commit=False)
             player.booking = booking
             player.save()
-            return redirect('my_bookings'),
+            return redirect('my_bookings')
     else:
         booking_form = BookingForm()
         player_form = PlayerForm()
