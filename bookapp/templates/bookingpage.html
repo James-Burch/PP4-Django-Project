@@ -6,25 +6,29 @@
 </div>
 <hr>
 <div class="text-center m-5 text-green">
-    <h2>Members and Visitors Tee Time Booking</h2>
+    <h1>Members and Visitors Tee Time Booking</h1>
     <p>Welcome to the Burch's Golf Course online tee time booking service. This service allows you to book a tee
         time at our golf course and get confirmation instantly.</p>
 </div>
 <hr>
 <div class="container-fluid bg-green text-white pt-2">
-    <h1 class="text-center">Book a Tee</h1>
+    <h2 class="text-center">Book a Tee</h2>
     <hr class="text-white">
     <!-- Displays the information of the user that is logged in -->
     <div class="row mt-4 d-flex justify-content-evenly">
         <div class="card col-12 col-lg-4 text-center text-white">
             <h3>Booking Instructions</h3>
             <hr class="text-white">
-            <p>
-                When adding players please enter names with a comma to seperate each name for example: James, Harry, Ethan
-            </p>
+            <ul>
+                <li>Enter a date you would like to play for example: 2024-11-29 (YEAR-MONTH-DAY)</li>
+                <li>Enter a time you would like to play for example: 11:00</li>
+                <li> When adding players please enter names with a comma to seperate each name for example: James,
+                    Harry, Ethan
+                </li>
+            </ul>
         </div>
         <div class="card col-12 col-lg-4 text-center">
-            <form method="post">
+            <form method="post" class="text-white">
                 {% csrf_token %}
                 {{ booking_form.as_p }}
                 {{ player_form.as_p }}

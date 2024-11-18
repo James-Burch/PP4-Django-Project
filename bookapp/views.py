@@ -34,7 +34,7 @@ def booking_view(request):
             player = player_form.save(commit=False)
             player.booking = booking
             player.save()
-            return redirect('my_bookings')
+            return redirect('my_bookings'),
     else:
         booking_form = BookingForm()
         player_form = PlayerForm()
@@ -56,14 +56,6 @@ def edit_booking(request, booking_id):
             if booking_form.is_valid():
                 booking_form.save()
             return redirect('my_bookings')
-        
-        elif 'add_player' in request.POST:
-            player_form = PlayerForm(request.POST)
-            if player_form.is_valid():
-                new_player = player_form.save(commit=False)
-                new_player.booking = booking
-                new_player.save()
-            return redirect('edit_booking', booking_id=booking_id)
         
         elif 'delete_booking' in request.POST:
             booking.delete()

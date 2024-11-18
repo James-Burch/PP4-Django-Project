@@ -41,18 +41,18 @@ body {
 
 .btn-signup,
 .btn-edit {
-    background-color: #9EB25D;
+    background-color: #455526;
     color: #fff;
 }
 
 .btn-signup:hover,
 .btn-signup:active {
     background-color: #fff;
-    color: #9EB25D;
+    color: #455526;
 }
 
 .link {
-    color: #9EB25D;
+    color: #455526;
     text-decoration: none;
 }
 
@@ -67,7 +67,7 @@ body {
 }
 
 .text-green {
-    color: #9EB25D;
+    color: #455526;
 }
 
 .text-start {
@@ -91,7 +91,7 @@ body {
 /* ----------------------------- base.html styling */
 
 .bg-green {
-    background-color: #9EB25D;
+    background-color: #455526;
 }
 
 .bg-book-btn {
@@ -114,7 +114,7 @@ body {
 /* Footer styling */
 
 .social-icons {
-    color: #9EB25D;
+    color: #455526;
 }
 
 .social-icons:hover {
@@ -123,7 +123,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     color: white;
-    background-color: #9EB25D;
+    background-color: #455526;
 }
 /* ----------------------------- Home page styling */
 
@@ -135,29 +135,20 @@ body {
     height: 45vh;
 }
 
-.overlay-md {
-    background-color: #343437;
-    opacity: 80%;
-}
-
 .info-box {
-    border: 2px solid #9EB25D;
+    border: 2px solid #455526;
 }
 
 /* ----------------------------- Booking page styling */
 
 .booking-info-box {
-    border: 2px #9EB25D;
+    border: 2px #455526;
     border-style: solid;
-}
-
-.bg-green {
-    background-color: #9EB25D;
 }
 
 .book-btn {
     border: 2px solid;
-    color: #9EB25D;
+    color: #455526;
     border-radius: 5px;
 }
 
@@ -172,7 +163,7 @@ body {
 .logout-bg {
     background-color: rgb(255, 255, 255);
     border-radius: 20px;
-    border: 2px solid #9EB25D;
+    border: 2px solid #455526;
     max-width: 500px;
     padding: 20px 0;
 }
@@ -186,7 +177,7 @@ body {
 .signup-bg {
     background-color: rgb(255, 255, 255);
     border-radius: 20px;
-    border: 2px solid #9EB25D;
+    border: 2px solid #455526;
     min-width: 50%;
     padding: 20px 0;
 }
@@ -200,7 +191,7 @@ body {
 .signin-bg {
     background-color: rgb(255, 255, 255);
     border-radius: 20px;
-    border: 2px solid #9EB25D;
+    border: 2px solid #455526;
     max-width: 500px;
     padding: 20px 0;
 }
@@ -217,7 +208,7 @@ body {
 
 .bk-table {
     width: 100%;
-    background-color: #9EB25D;
+    background-color: #455526;
     color: white;
 }
 
