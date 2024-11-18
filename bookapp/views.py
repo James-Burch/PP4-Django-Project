@@ -21,6 +21,7 @@ def booking_confirmation(request):
 def register(request):
     form = UserCreationForm()
     context = {'form':form}
+    messages.success('You have successfully created an account! You can now make bookings!')
     return render(request, "register.html", context)
 
 @login_required
@@ -37,6 +38,8 @@ def booking_view(request):
             player.save()
             messages.success(request, 'Your booking has been successfully created!')
             return redirect('my_bookings')
+        else:
+            messages.error(request, '! There was an error with your booking. Please check the booking instructions and try again. !')    
     else:
         booking_form = BookingForm()
         player_form = PlayerForm()
@@ -57,10 +60,12 @@ def edit_booking(request, booking_id):
             booking_form = BookingForm(request.POST, instance=booking)
             if booking_form.is_valid():
                 booking_form.save()
+            messages.success(request, 'Your booking has been successfully updated!')    
             return redirect('my_bookings')
         
         elif 'delete_booking' in request.POST:
             booking.delete()
+            messages.success(request, 'Your booking has been successfully cancelled!')
             return redirect('my_bookings')
     
     else:

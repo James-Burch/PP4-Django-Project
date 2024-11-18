@@ -4,6 +4,17 @@
 <div class="course-bg-image">
 
 </div>
+{% if messages %}
+            <div class="container-fluid alert-fail fw-bold">
+                {% for message in messages %}
+                <div class="alert {% if message.tags %}alert-{{ message.tags }}{% else %}alert-info{% endif %} alert-dismissible fade show text-wrap"
+                    role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
 <hr>
 <div class="text-center m-5 text-green">
     <h1>Members and Visitors Tee Time Booking</h1>

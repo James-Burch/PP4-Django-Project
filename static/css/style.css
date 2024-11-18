@@ -88,17 +88,10 @@ body {
     background-size: cover;
 }
 
-
-
-.message-box {
-    background-color: white;
-    color: #455526;
-    max-width: 100%;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
+.alert-fail {
+    color: red;
+    margin-top: 5px;
 }
-
 /* ----------------------------- base.html styling */
 
 .bg-green {

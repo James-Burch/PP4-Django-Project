@@ -5,6 +5,17 @@
         <h1 class="text-white fw-bold m-5 hero-text">Welcome to Burch's Golf Club, come and play a round now!</h1>
     </div>
 </div>
+{% if messages %}
+<div class="container-fluid alert-fail fw-bold">
+    {% for message in messages %}
+    <div class="alert {% if message.tags %}alert-{{ message.tags }}{% else %}alert-info{% endif %} alert-dismissible fade show text-wrap"
+        role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
 <div class="container-fluid">
     <div class="row d-flex justify-content-space-evenly info-box text-center">
         <div class="col-lg-4 col-12 text-green text-center p-2">
