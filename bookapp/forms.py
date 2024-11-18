@@ -7,7 +7,9 @@ class BookingForm(forms.ModelForm):
         model = Booking
         fields = ['date', 'time']
         widgets = {
-            'date': forms.SelectDateWidget(),  # Provides a dropdown
+            'date': forms.SelectDateWidget(attrs={
+                    'aria-label': 'Select booking date',
+                }),  # Provides a dropdown
             'time': forms.Select(choices=[
              ('07:00:00', '7:00 AM'),
              ('07:12:00', '7:12 AM'),
@@ -54,7 +56,10 @@ class BookingForm(forms.ModelForm):
              ('15:24:00', '3:24 PM'),
              ('15:36:00', '3:36 PM'),
              ('15:48:00', '3:48 PM'),
-             ('16:00:00', '4:00 PM')]),
+             ('16:00:00', '4:00 PM')],
+             attrs={
+                    'aria-label': 'Select booking date',
+                }),
         }
 
 
