@@ -45,7 +45,7 @@ The above image shows the booking page when a user is logged in
 - Once a user has submitted their booking form and it is successful they will then be redirected to the 'my bookings' page which will display any current or past bookings they have made. I have displayed the information in a table giving each booking its own row.
 ![Image to show the my booking page with some test bookings](static/images/mybookingtable.png)
 - The my bookings page has an 'edit/cancel' button attached at the end of each booking, this is linked to the edit booking page and my edit booking views.py code to allow a user when logged in to change anything about their booking and even delete/cancel it.
-![Image to show the edit booking screen]()
+![Image to show the edit booking screen](static/images/editbookingpage.png)
 ## Using Agile
 - I do not believe that I have used agile entirely correctly throughout this project as I did not think to add smaller parts of the project like styling and bugs that I came into until my mentor suggested that I needed to add these things.
 - Requirements were captured as user stories as issues and put into my 'project' on github for tracking progress. They describe features from the end-user's perspective.
@@ -89,6 +89,7 @@ Views.py file validation
 - Next will be all of the pages lighthouse scores
 
 #### Home Page
+This score is low because of the iframe importing the google map, I have not been able to find a fix for this.
 ![Image to show the home page lighthouse score](static/images/homepagelightouse.png)
 
 #### Signin/up and Logout Pages
@@ -107,12 +108,17 @@ Signup
 
 ## Bugs and Fixes
 
+- There was a bug where the booking form would only let you submit if you added a player into the Name: section of the form, this should not be the case, it should submit even if this field is left blank as players should be able to book for just themselves. 
+
 - I had a problem when making my django models for making a booking where once a user had filled out the booking form it was not saving properly to the database and creating the booking, this made me rethink and rewrite my code for the whole booking process to solve it. Once I had re written the code it was working how I wanted it too.
 
 - There was a bug where the successfully signed in alert stays on the page creating an area of blank space between the booking page top image and the navbar that should not be there and it is not possible to scroll up and delete this alert. This bug was fixed when I went back to add in the final messages for telling the user that they have successfully signed in or completed a form anywhere on the site.
 
 ### Problems I Had
 - Getting the 'book' submit button on the create_booking form view to work, I was able to create/add a booking in the admin view and have it display in the my bookings section when a user was logged in but not able to save a booking correctly when signed in on the 'book a tee' page. 
+- To fix the above problem I decided to completely redo my models as they were not working as I had intended so personally I felt that it was easier to
+begin to rewrite the models from scratch using different parts of the code that I already had written. This was a good decision as it allowed me to learn from
+my mistakes from the previous models and get it right this time. I am very happy with how the final product turned out for the booking form as a result.
 
 ### Deployment
 - For deploying this project their are many more steps to previous projects. I personally had some issues when trying to get my static files to work on my deployed project through heroku. I later found my issue after about 30-45 minutes of searching that I had not removed the 'collect_static' from my Config Vars on settings of my heroku app.
@@ -135,9 +141,5 @@ Link to the live site : https://pp4-django-project-082841c8663e.herokuapp.com/
 - I also have another django model created by myself which allows a user to select a time from 4 different time slots to create a booking, these bookings can be viewed when logged in.
 
 ### Django Views
-
-
-
-
 
 ## Future Enhancements
