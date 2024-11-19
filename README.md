@@ -28,12 +28,12 @@ Prior to starting this project deciding what to base it on was hard as I had man
 ## Features
 
 - The site utilises CSS hover to target buttons and nav elements to enlarge when a mouse is hovering over them to encourage a user to click and also indicates what they are going to be redirected to clearer. The curser also turns into a pointer to suggest that it is a link that can/should be clicked.
-- The colours used work well together a create a clean easy to use website that passes all accessability checks.
+- The colours used work well together a create a clean easy to use website that passes all accessibility checks.
 - All nav items have clear and obvious names as to what page the user should expect to land on when they click that link. The navbar is also full responsive and collapseable on smaller screen sizes.
 
 ### Home Page
 - The home page on this project has been kept simple as this is not the main focus of my project however it serves the purpose of welcoming site users giving them a welcome to the club/website and the course location/address.
-- It has been made using bootstrap just like all of the HTML structure on this project, as a result it is fully responsive on all screen sizes utilising a collapsable navbar on smaller devices.
+- It has been made using bootstrap just like all of the HTML structure on this project, as a result it is fully responsive on all screen sizes utilising a collapsible navbar on smaller devices.
 ![Image to show the home page](static/images/homepage.png)
 
 ### Booking Page
