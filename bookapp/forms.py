@@ -64,6 +64,8 @@ class BookingForm(forms.ModelForm):
 
 
 class PlayerForm(forms.ModelForm):
+    name = forms.CharField(max_length=100, required=False)
+
     class Meta:
         model = Player
         fields = ['name']

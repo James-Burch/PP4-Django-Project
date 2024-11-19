@@ -35,7 +35,7 @@ Prior to starting this project deciding what to base it on was hard as I had man
 ![Image to show the home page](static/images/homepage.png)
 ### Booking Page
 - The booking page has a login_required attached to the views.py file to ensure that it can only display when an authenticated user is logged in, otherwise the user will be met with the signin page before being able to access the booking page.
-- Once the user is signed in then the booking page is displayed, the user is then met with a nice image of the course with a small image with initial information about member and visitor booking.
+- Once the user is signed in then the booking page is displayed, the user is then met with a nice image of the course with initial information about member and visitor booking.
 - Below this, there is a booking form to be filled out alongisde booking instructions and 'your information' this just displays the signed in users account name as they do not require any other information to create an account for the purpose of this project. The booking form only requires the user to select a date and time to submit.
 ![Image to show booking form page when logged in](static/images/bookingform.png)
 The above image shows the booking page when a user is logged in
@@ -46,10 +46,15 @@ The above image shows the booking page when a user is logged in
 ![Image to show the my booking page with some test bookings](static/images/mybookingtable.png)
 - The my bookings page has an 'edit/cancel' button attached at the end of each booking, this is linked to the edit booking page and my edit booking views.py code to allow a user when logged in to change anything about their booking and even delete/cancel it.
 ![Image to show the edit booking screen](static/images/editbookingpage.png)
+### Messages 
+- The website has django messages built in so that whenever a user logs in or out they receive a message on screen to confirm that it has been successful.
+It also has messages that come up if the form has an error and is not completed correctly prompting the user to try again, if they booking is successful the user will be redirected to my bookings and shown a successful booking message.
+The messages are also linked to the edit/cancel booking page which will show to confirm the successfull changes or cancellation to a booking.
+![Image to show an example confirmation message](static/images/signinmessage.png)
 ## Using Agile
 - I do not believe that I have used agile entirely correctly throughout this project as I did not think to add smaller parts of the project like styling and bugs that I came into until my mentor suggested that I needed to add these things.
 - Requirements were captured as user stories as issues and put into my 'project' on github for tracking progress. They describe features from the end-user's perspective.
-- The project was broken down into smaller, manageable iterations. I tried to not move onto the next part of the project until I was satisfied with the current part.
+- The project was broken down into smaller, manageable iterations. I tried to not move onto the next part of the project until I was satisfied with the current part. However, there were some things that I believed to be completed when in actual fact they were not, some of them had bugs or improvements that could be made which were highlighted to my by my mentor. I will remember to not progress anything into completed in the future until I am 100% sure it is complete.
 - Code was committed regularly to the repository ensuring that the project was always in a testable state.
 
 ## Testing
@@ -63,7 +68,7 @@ The above image shows the booking page when a user is logged in
 | There is no horizontal scroll | Load the deployed project and inspect (dev tools) check every page on different screen sizes | No horizontal scroll on any display or device | Pass |
 | Signin/Signup allows a user to login or signup | Try to signin before creating an account then try to create an account and sign in after | Firstly it should not sign in and prompt to create an account then signin with them details | Pass |
 | Booking form allows submit without adding players | Try to make a booking without adding players | Form should submit and booking appear in my booking page with extra players column empty | Fail |
-| -- | -- | -- | -- |
+| Edit/Cancel button | Try to edit and save changes or delete a booking | Booking should update or delete | Pass |
 
 ### Code Validation and Lighthouse Tests
 
@@ -116,7 +121,7 @@ Signup
 
 ### Problems I Had
 - Getting the 'book' submit button on the create_booking form view to work, I was able to create/add a booking in the admin view and have it display in the my bookings section when a user was logged in but not able to save a booking correctly when signed in on the 'book a tee' page. 
-- To fix the above problem I decided to completely redo my models as they were not working as I had intended so personally I felt that it was easier to
+ - To fix the above problem I decided to completely redo my models as they were not working as I had intended so personally I felt that it was easier to
 begin to rewrite the models from scratch using different parts of the code that I already had written. This was a good decision as it allowed me to learn from
 my mistakes from the previous models and get it right this time. I am very happy with how the final product turned out for the booking form as a result.
 
