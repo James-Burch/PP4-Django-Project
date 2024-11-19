@@ -82,7 +82,9 @@ Steps for deployment:
 1. Firstly to deploy a project you must create an app on heroku and link your github repository
 2. Next add your config for your database URL and secret_key that is in your settings.py file of your django project. Also add a collect static config var which will later need removing.
 3. To ready your code to deploy you must use pip3 to install gunicorn and whitenoise (freeze these to local - requirements.txt file), add a Procfile file and add heroku to the allowed hosts in settings.py.
-4.  Once I had 
+4. Configure the whitenoise and static files in the settings.py file.
+5. Create a file called 'Procfile' in the root directory and add web: gunicorn <your_project_name>.wsgi then run the pip3 freeze --local > requirements.txt command
+6. 
 
 Link to the live site : https://pp4-django-project-082841c8663e.herokuapp.com/
 
