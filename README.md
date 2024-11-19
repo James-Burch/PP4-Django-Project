@@ -67,7 +67,7 @@ The above image shows the booking page when a user is logged in
 
 ### Code Validation and Lighthouse Tests
 
-I have used the Code Institute python code checker to make sure that my code is valid, here are the screenshots of the results from each file:
+- I have used the Code Institute python code checker to make sure that my code is valid, here are the screenshots of the results from some files however all files have been checked:
 
 Models.py file validation
 ![Image to show the python validation for the models.py file](static/images/modelsvalidation.png)
@@ -77,6 +77,33 @@ Urls.py file validation
 ![Image to show the python validation for the urls.py file](static/images/urlsvalidation.png)
 Views.py file validation
 ![Image to show the python validation for the views.py file](static/images/viewsvalidation.png)
+
+- I have also validated all of my CSS using the CSS Validator
+
+![Image to show the validated CSS](static/images/cssvalidation.png)
+
+- I have also validated all of my HTML by passing the live URL to the deployed website through the HTML Validation, please note there was 1 error. I have looked into this error and have been unable to resolve however I have attached an image to show where the supposed error is as you can see there is a closing footer tag.
+![Image to show the validated HTML](static/images/htmlvalidation.png)
+![Image to show the footer has a closing tag](static/images/showingfooterissue.png)
+
+- Next will be all of the pages lighthouse scores
+
+#### Home Page
+![Image to show the home page lighthouse score](static/images/homepagelightouse.png)
+
+#### Signin/up and Logout Pages
+Signin
+![Image to show the signin lighthouse score](static/images/signinlighthouse.png)
+Signout
+![Image to show the signout lighthouse score](static/images/signoutlighthouse.png)
+Signup
+![Image to show the signup lighthouse score](static/images/signuplightouse.png)
+#### Booking Page
+![Image to show the booking page lighthouse score](static/images/bookingpagelighthouse.png)
+#### My Bookings Page
+![Image to show the my bookings page lighthouse score](static/images/mybookinglighthouse.png)
+#### Edit Booking Page
+![Image to show the edit booking page lighthouse score](static/images/editbookinglighthouse.png)
 
 ## Bugs and Fixes
 
@@ -95,9 +122,7 @@ Steps for deployment:
 1. Firstly to deploy a project you must create an app on heroku and link your github repository
 2. Next add your config for your database URL and secret_key that is in your settings.py file of your django project. Also add a collect static config var which will later need removing.
 3. To ready your code to deploy you must use pip3 to install gunicorn and whitenoise (freeze these to local - requirements.txt file), add a Procfile file and add heroku to the allowed hosts in settings.py.
-4. Configure the whitenoise and static files in the settings.py file.
-5. Create a file called 'Procfile' in the root directory and add web: gunicorn <your_project_name>.wsgi then run the pip3 freeze --local > requirements.txt command
-6. 
+4.  Once I had 
 
 Link to the live site : https://pp4-django-project-082841c8663e.herokuapp.com/
 
