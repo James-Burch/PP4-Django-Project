@@ -47,20 +47,17 @@ The above image shows the booking page when a user is logged in
 ### My Bookings Page
 - Once a user has submitted their booking form and it is successful they will then be redirected to the 'my bookings' page which will display any current or past bookings they have made. I have displayed the information in a table giving each booking its own row.
 ![Image to show the my booking page with some test bookings](static/images/mybookingtable.png)
+![Image to show the table if a user has no bookings](static/images/nobookingstoview.png)
 - The my bookings page has an 'edit/cancel' button attached at the end of each booking, this is linked to the edit booking page and my edit booking views.py code to allow a user when logged in to change anything about their booking and even delete/cancel it.
 ![Image to show the edit booking screen](static/images/editbookingpage.png)
+### Footer
+- The footer is the same across any page on the website just having 3 social media icons which open in a new tab and take the user to the respective social medias. The links are just to the generic landing pages as this is a made up golf club and it does not have these social media accounts.
+![Image to show the footer element](static/images/footer.png)
 ### Messages 
 - The website has django messages built in so that whenever a user logs in or out they receive a message on screen to confirm that it has been successful.
 It also has messages that come up if the form has an error and is not completed correctly prompting the user to try again, if they booking is successful the user will be redirected to my bookings and shown a successful booking message.
 The messages are also linked to the edit/cancel booking page which will show to confirm the successfull changes or cancellation to a booking.
 ![Image to show an example confirmation message](static/images/signinmessage.png)
-
-### Using Bootstrap
-- I decided to import a basic bootstrap navbar from the bootstrap website then modify it to the needs of my site.
-- The rest of the bootstrap used on this project is completely my own and not inspired from anywhere.
-
-### Images
-- All images used on this site are from google images and are random courses as Burch's Golf Course does not exist.
 
 ## Using Agile
 - I do not believe that I have used agile entirely correctly throughout this project as I did not think to add smaller parts of the project like styling and bugs that I came into until my mentor suggested that I needed to add these things.
@@ -165,8 +162,6 @@ Steps for deployment:
 Link to the live site : https://pp4-django-project-082841c8663e.herokuapp.com/
 
 ## Using Django
-- Talk about how I decided to change my models completely and struggles with having to change all of the code that linked together to get it to the front end as I could not figure out how to get the bookings to post/save to the backend without use of the admin panel.
-
 - While creating my project I had written my intial models out which later caused some problems once I had a form to be filled out and post the data to the back end to be stored. The form was being filled out but nothing was being saved to the backend which was a big issue as this meant that there was no data to retrieve from the database to display in a users account for their bookings. I had spent a significant amount of time looking into this and changing small bits of code across the project to try and rectify this but nothing I did fixed this issue. I decided that it would be better to use the code I had written and rewrite my models but make sure that they were better and going to handle the form data correctly. This is now what my current models are that allow the site to work as it does.
 
 - Once I had created the model to make a booking and the data was being stored correctly, I had already made my html template to display the booking data but there was no way to update or delete anything as a site user which is a big problem as this would not meet the requirements of the site goals or the project. I decided that I wanted to add a button to each individual button which meant that a user would be redirected to another page where they could either 'Cancel' or update anything to do with their booking such a just the time, day, year or month. I did this by writing a view that would overwrite the current booking information.
@@ -177,3 +172,10 @@ Link to the live site : https://pp4-django-project-082841c8663e.herokuapp.com/
 - One thing that I would add in the future is the feature that I had just talked about where a user can add an extra player/person onto the booking through the edit booking page. This would give the website a more real world feel as this is something that I often use myself when going for a round of golf to add a friend who has been able to join last minute.
 
 - I would love to have added another model which allows users to share their scores from the round of golf they have played, it would have a leaderboard which all users when signed in can view to see who is ontop for that week/month or overall, it would have a filter where users could select if they wanted to see high/low scores of the week. 
+
+### Credits
+- Thanks to my mentor Rory for the help and pointers with what I needed to add and change to get this project complete and for guiding me when I had issues setting up the IDE for this project
+- Thanks to my fellow students who have been kind enough to give pointers with my code and help me with some errors along the way.
+- The 'I think therefore I blog' walkthrough project which I used to reference the deployment process and revisit when I was having troubles at any point during this project.
+- All images were sourced from google and are not of any specific golf course.
+- I used the bootstrap website to help with my html structure and different features of bootstrap for example I used a navbar and edited it to fit the needs of my project.
