@@ -8,7 +8,7 @@ I have created this golf booking system site as I play and enjoy golf myself. I 
 - Burch's Golf Club/Course does not actually exist it is made up using my surname for the purpose of this project.
 
 ## Project Planning
-Prior to starting this project deciding what to base it on was hard as I had many options such as; restaurant booking system, car sale/buying site and a golf booking system/website for a golf club. I have always played golf and enjoyed it, other projects have been based on my other interests so I thought it was only right to carry on that theme. It really helps me when creating my projects to do this as I can share my love and passion for my interests through my work. I set out to begin deciding what needed to be on the site by drawing out a flow chart with a pen and paper to help me understand what I needed on/from my site. I then began to create my user stories/issues to really understand the needs of both the user and admin. The site needed to include a booking system which only allows a person to book if they have an account registered, manage their bookings and view bookings. 
+Prior to starting this project deciding what to base it on was hard as I had many options such as; restaurant booking system, car sale/buying site and a golf booking system/website for a golf club. I have always played golf and enjoyed it, other projects have been based on my other interests so I thought it was only right to carry on that theme. It really helps me when creating my projects to do this as I can share my love and passion for my interests through my work. I set out to begin deciding what needed to be on the site by drawing out a flow chart with a pen and paper to help me understand what I needed on/from my site. I then began to create my user stories/issues to really understand the needs of both the user and admin. The site needed to include a booking system which only allows a person to book if they have an account registered and signed in. When a user is signed in they must be able to manage their bookings and view bookings. 
 
 ## User Experience (UX)
 
@@ -67,7 +67,7 @@ The messages are also linked to the edit/cancel booking page which will show to 
 | Social media links work | Load the deployed project and click each link | Every link lands on the correct page | Pass |
 | There is no horizontal scroll | Load the deployed project and inspect (dev tools) check every page on different screen sizes | No horizontal scroll on any display or device | Pass |
 | Signin/Signup allows a user to login or signup | Try to signin before creating an account then try to create an account and sign in after | Firstly it should not sign in and prompt to create an account then signin with them details | Pass |
-| Booking form allows submit without adding players | Try to make a booking without adding players | Form should submit and booking appear in my booking page with extra players column empty | Fail |
+| Booking form allows submit without adding players | Try to make a booking without adding players | Form should submit and booking appear in my booking page with extra players column empty | Pass |
 | Edit/Cancel button | Try to edit and save changes or delete a booking | Booking should update or delete | Pass |
 
 ### Code Validation and Lighthouse Tests
@@ -113,6 +113,9 @@ Signup
 
 ## Bugs and Fixes
 
+- I had an issue with the my bookings table on screen sizes that were smaller than 768px as the page was getting horizontal scroll from the table being too wide.
+ - To fix this problem I used CSS styling to make the table have a scroll wheel when it can't fit fully on the screen without scrolling. This did cause some issues with the classes I had targetting the table to style it, however this was a quick fix and now is fully responsive.
+
 - There was a bug where the booking form would only let you submit if you added a player into the Name: section of the form, this should not be the case, it should submit even if this field is left blank as players should be able to book for just themselves. 
 
 - I had a problem when making my django models for making a booking where once a user had filled out the booking form it was not saving properly to the database and creating the booking, this made me rethink and rewrite my code for the whole booking process to solve it. Once I had re written the code it was working how I wanted it too.
@@ -120,10 +123,13 @@ Signup
 - There was a bug where the successfully signed in alert stays on the page creating an area of blank space between the booking page top image and the navbar that should not be there and it is not possible to scroll up and delete this alert. This bug was fixed when I went back to add in the final messages for telling the user that they have successfully signed in or completed a form anywhere on the site.
 
 ### Problems I Had
+
 - Getting the 'book' submit button on the create_booking form view to work, I was able to create/add a booking in the admin view and have it display in the my bookings section when a user was logged in but not able to save a booking correctly when signed in on the 'book a tee' page. 
  - To fix the above problem I decided to completely redo my models as they were not working as I had intended so personally I felt that it was easier to
 begin to rewrite the models from scratch using different parts of the code that I already had written. This was a good decision as it allowed me to learn from
 my mistakes from the previous models and get it right this time. I am very happy with how the final product turned out for the booking form as a result.
+
+- When doing my final deploy for my project I had my secret key setup wrong and it was visible in the settings.py file, I moved this to a file that is in the gitignore. file so that it can not be accessed for security reasons, I had some issues with this as I did not import the secret key from the file it was in correctly. This lead to my site having an error which did not tell me the root cause of the issue even with debug = True. To resolve the issue I went back to the Code Institute walkthrough project to check through the deployment steps, I quickly realised where I had gone wrong and rectified this issue.
 
 ### Deployment
 - For deploying this project their are many more steps to previous projects. I personally had some issues when trying to get my static files to work on my deployed project through heroku. I later found my issue after about 30-45 minutes of searching that I had not removed the 'collect_static' from my Config Vars on settings of my heroku app.
@@ -139,12 +145,14 @@ Link to the live site : https://pp4-django-project-082841c8663e.herokuapp.com/
 
 ## Using Django
 - Talk about how I decided to change my models completely and struggles with having to change all of the code that linked together to get it to the front end as I could not figure out how to get the bookings to post/save to the backend without use of the admin panel.
-- Talk about how I then had to add an edit button to allow users to edit their booking
 
-### Django Models
-- I have a django model that I have created myself that allow an admin to select dates that are available for booking via the admin panel, once the dates have been added to the database any user is then able to see them on a drop down menu when creating a booking.
-- I also have another django model created by myself which allows a user to select a time from 4 different time slots to create a booking, these bookings can be viewed when logged in.
+- While creating my project I had written my intial models out which later caused some problems once I had a form to be filled out and post the data to the back end to be stored. The form was being filled out but nothing was being saved to the backend which was a big issue as this meant that there was no data to retrieve from the database to display in a users account for their bookings. I had spent a significant amount of time looking into this and changing small bits of code across the project to try and rectify this but nothing I did fixed this issue. I decided that it would be better to use the code I had written and rewrite my models but make sure that they were better and going to handle the form data correctly. This is now what my current models are that allow the site to work as it does.
 
-### Django Views
+- Once I had created the model to make a booking and the data was being stored correctly, I had already made my html template to display the booking data but there was no way to update or delete anything as a site user which is a big problem as this would not meet the requirements of the site goals or the project. I decided that I wanted to add a button to each individual button which meant that a user would be redirected to another page where they could either 'Cancel' or update anything to do with their booking such a just the time, day, year or month. I did this by writing a view that would overwrite the current booking information.
+ - Initially I did try to have a feature that allowed a user to add extra players to a booking through this page however it was not working as I wanted and was causing issues which I did not have time to fix properly. This was removed as a result of not being needed and not working correctly.
 
 ## Future Enhancements
+
+- One thing that I would add in the future is the feature that I had just talked about where a user can add an extra player/person onto the booking through the edit booking page. This would give the website a more real world feel as this is something that I often use myself when going for a round of golf to add a friend who has been able to join last minute.
+
+- I would love to have added another model which allows users to share their scores from the round of golf they have played, it would have a leaderboard which all users when signed in can view to see who is ontop for that week/month or overall, it would have a filter where users could select if they wanted to see high/low scores of the week. 
