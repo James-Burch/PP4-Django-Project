@@ -47,6 +47,7 @@ The above image shows the booking page when a user is logged in
 - The my bookings page has an 'edit/cancel' button attached at the end of each booking, this is linked to the edit booking page and my edit booking views.py code to allow a user when logged in to change anything about their booking and even delete/cancel it.
 ![Image to show the edit booking screen]()
 ## Using Agile
+- I do not believe that I have used agile entirely correctly throughout this project as I did not think to add smaller parts of the project like styling and bugs that I came into until my mentor suggested that I needed to add these things.
 - Requirements were captured as user stories as issues and put into my 'project' on github for tracking progress. They describe features from the end-user's perspective.
 - The project was broken down into smaller, manageable iterations. I tried to not move onto the next part of the project until I was satisfied with the current part.
 - Code was committed regularly to the repository ensuring that the project was always in a testable state.
@@ -61,15 +62,27 @@ The above image shows the booking page when a user is logged in
 | Social media links work | Load the deployed project and click each link | Every link lands on the correct page | Pass |
 | There is no horizontal scroll | Load the deployed project and inspect (dev tools) check every page on different screen sizes | No horizontal scroll on any display or device | Pass |
 | Signin/Signup allows a user to login or signup | Try to signin before creating an account then try to create an account and sign in after | Firstly it should not sign in and prompt to create an account then signin with them details | Pass |
-| Booking form allows submit without adding players | Try to make a booking without adding players | Form should submit and booking appear in my booking page with extra players column empty | Pass |
+| Booking form allows submit without adding players | Try to make a booking without adding players | Form should submit and booking appear in my booking page with extra players column empty | Fail |
 | -- | -- | -- | -- |
 
+### Code Validation and Lighthouse Tests
+
+I have used the Code Institute python code checker to make sure that my code is valid, here are the screenshots of the results from each file:
+
+Models.py file validation
+![Image to show the python validation for the models.py file](static/images/modelsvalidation.png)
+Forms.py file validation
+![Image to show the python validation for the forms.py file](static/images/formsvalidation.png)
+Urls.py file validation
+![Image to show the python validation for the urls.py file](static/images/urlsvalidation.png)
+Views.py file validation
+![Image to show the python validation for the views.py file](static/images/viewsvalidation.png)
 
 ## Bugs and Fixes
 
 - I had a problem when making my django models for making a booking where once a user had filled out the booking form it was not saving properly to the database and creating the booking, this made me rethink and rewrite my code for the whole booking process to solve it. Once I had re written the code it was working how I wanted it too.
 
-- There is currently a bug where the successfully signed in alert stays on the page creating an area of blank space between the booking page top image and the navbar that should not be there and it is not possible to scroll up and delete this alert
+- There was a bug where the successfully signed in alert stays on the page creating an area of blank space between the booking page top image and the navbar that should not be there and it is not possible to scroll up and delete this alert. This bug was fixed when I went back to add in the final messages for telling the user that they have successfully signed in or completed a form anywhere on the site.
 
 ### Problems I Had
 - Getting the 'book' submit button on the create_booking form view to work, I was able to create/add a booking in the admin view and have it display in the my bookings section when a user was logged in but not able to save a booking correctly when signed in on the 'book a tee' page. 
