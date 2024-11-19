@@ -3,21 +3,23 @@
 ![Screenshot of the home page of the site](static/images/homepage.png)
 
 ## Site Introduction
-I have created this golf booking system site as I play and enjoy golf myself. I like to create my projects around my own personal interests as I am able to put more into it and always want to add more features to improve it. The site is a place where users can book a tee time to play a round of golf, add players too, change the date/time and cancel bookings. The project utilites Django, Bootstrap, HTML Templates, CSS and Python code to allow the user to book a time, edit their booking, cancel their booking and upload scores to the leaderboard. The project has an admin account linked which can select what dates and times are available for users to book.
+I have created this golf booking system site as I play and enjoy golf myself. I like to create my projects around my own personal interests as I am able to put more into it and always want to add more features to improve it. The site is a place where users can book a tee time to play a round of golf, add players too, change the date/time and cancel bookings. The project utilites Django, Bootstrap, HTML Templates, CSS and Python code to allow the user to book a time, edit their booking and cancel their booking.
 
 - Burch's Golf Club/Course does not actually exist it is made up using my surname for the purpose of this project.
 
 ## Project Planning
-Prior to starting this project deciding what to base it on was hard as I had many options such as; restaurant booking system, car sale/buying site and a golf booking system/website for a golf club. I have always played golf and enjoyed it, other projects have been based on my other interests so I thought it was only right to carry on that theme. It really helps me when creating my projects to do this as I can share my love and passion for my interests through my work. I set out to begin deciding what needed to be on the site by drawing out a flow chart with a pen and paper to help me understand what I needed on/from my site. I then began to create my user stories/issues to really understand the needs of both the user and admin. The site needed to include a booking system which only allows a person to book if they have an account registered, a leaderboard for the users to upload their score, a 'profile' so that a user can sign in and manage their bookings and also view previous bookings. 
+Prior to starting this project deciding what to base it on was hard as I had many options such as; restaurant booking system, car sale/buying site and a golf booking system/website for a golf club. I have always played golf and enjoyed it, other projects have been based on my other interests so I thought it was only right to carry on that theme. It really helps me when creating my projects to do this as I can share my love and passion for my interests through my work. I set out to begin deciding what needed to be on the site by drawing out a flow chart with a pen and paper to help me understand what I needed on/from my site. I then began to create my user stories/issues to really understand the needs of both the user and admin. The site needed to include a booking system which only allows a person to book if they have an account registered, manage their bookings and view bookings. 
 
 ## User Experience (UX)
 
 ### User Needs
-- The Burch's Golf Club website needs to allow a site user to create and account to make, manage and view their tee time bookings.
+- The Burch's Golf Club website needs to allow a site user to create an account.
+- Be able to make a tee time booking adn then view their bookings
+- Be able to edit and cancel any bookings they have made
 - It must be clear and easy to navigate.
 - A site user must be able to find the address and map location of the golf course.
 ### Colour Scheme
-- I decided to use a green/white colour scheme for this project as I think they compliment one another nicely. This creates a great user experience as everything is clear and easily readable. For an unknown reason when doing lighthouse tests on my home page it suggests the the white over the green background is not a good enough contrast, however, this issue does not appear when testing any other pages. I have also recieved many opinions from friends and family to query whether or not they think it is a good contrast and the general response is that the colours are clear against one another.
+- I decided to use a green/white colour scheme for this project as I think they compliment one another nicely. This creates a great user experience as everything is clear and easily readable. The initial green that I used did not pass the accessibility lighthouse tests so I had to use the prompt to find a darker shade that did pass.
 - I also decided to use green as it is a very fitting colour to use when considering that the site is used for booking a round of golf.
 
 ### Using Bootstrap
@@ -38,12 +40,12 @@ Prior to starting this project deciding what to base it on was hard as I had man
 ![Image to show booking form page when logged in](static/images/bookingform.png)
 The above image shows the booking page when a user is logged in
 - The booking page also has some information below the booking form for information such as green fees, buggy hire and the practise area so that users know what to expect upon arrival.
-![Image to show the 3 information boxes on this page](static/images/bookingpageinfo.png)
+![Image to show the 3 information boxes on this page](static/images/extrainformation.png)
 ### My Bookings Page
 - Once a user has submitted their booking form and it is successful they will then be redirected to the 'my bookings' page which will display any current or past bookings they have made. I have displayed the information in a table giving each booking its own row.
-![Image to show the my booking page with some test bookings](static/images/mybookingpage.png)
+![Image to show the my booking page with some test bookings](static/images/mybookingtable.png)
 - The my bookings page has an 'edit/cancel' button attached at the end of each booking, this is linked to the edit booking page and my edit booking views.py code to allow a user when logged in to change anything about their booking and even delete/cancel it.
-![Image to show the edit booking screen](static/images/editbookingpage.png)
+![Image to show the edit booking screen]()
 ## Using Agile
 - Requirements were captured as user stories as issues and put into my 'project' on github for tracking progress. They describe features from the end-user's perspective.
 - The project was broken down into smaller, manageable iterations. I tried to not move onto the next part of the project until I was satisfied with the current part.
@@ -99,4 +101,3 @@ Link to the live site : https://pp4-django-project-082841c8663e.herokuapp.com/
 
 
 ## Future Enhancements
-
