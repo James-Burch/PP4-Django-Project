@@ -2,8 +2,10 @@
 
 ![Screenshot of the home page of the site](static/images/homepage.png)
 
+Link to the live site : https://pp4-django-project-082841c8663e.herokuapp.com/
+
 ## Site Introduction
-I have created this golf booking system site as I play and enjoy golf myself. I like to create my projects around my own personal interests as I am able to put more into it and always want to add more features to improve it. The site is a place where users can book a tee time to play a round of golf, add players too, change the date/time and cancel bookings. The project utilites Django, Bootstrap, HTML Templates, CSS and Python code to allow the user to book a time, edit their booking and cancel their booking.
+Burch's Golf Club is a site where golf lovers can find out more information about what to expect when visiting the course and create an account to make a tee time booking to come and play a round to see what the course has to offer. I have created this golf booking system site as I play and enjoy golf myself. I like to create my projects around my own personal interests as I am able to put more into it and always want to add more features to improve it. The site is a place where users can book a tee time to play a round of golf, add players too, change the date/time and cancel bookings. The project utilites Django, Bootstrap, HTML Templates, CSS and Python code to allow the user to book a time, edit their booking and cancel their booking.
 
 - Burch's Golf Club/Course does not actually exist it is made up using my surname for the purpose of this project.
 
@@ -18,21 +20,22 @@ Prior to starting this project deciding what to base it on was hard as I had man
 - Be able to edit and cancel any bookings they have made
 - It must be clear and easy to navigate.
 - A site user must be able to find the address and map location of the golf course.
+
 ### Colour Scheme
 - I decided to use a green/white colour scheme for this project as I think they compliment one another nicely. This creates a great user experience as everything is clear and easily readable. The initial green that I used did not pass the accessibility lighthouse tests so I had to use the prompt to find a darker shade that did pass.
 - I also decided to use green as it is a very fitting colour to use when considering that the site is used for booking a round of golf.
 
-### Using Bootstrap
-- I decided to import a basic bootstrap navbar from the bootstrap website then modify it to the needs of my site.
-
-### Images
-- All images used on this site are from google images and are random courses as Burch's Golf Course does not exist.
-
 ## Features
+
+- The site utilises CSS hover to target buttons and nav elements to enlarge when a mouse is hovering over them to encourage a user to click and also indicates what they are going to be redirected to clearer. The curser also turns into a pointer to suggest that it is a link that can/should be clicked.
+- The colours used work well together a create a clean easy to use website that passes all accessability checks.
+- All nav items have clear and obvious names as to what page the user should expect to land on when they click that link. The navbar is also full responsive and collapseable on smaller screen sizes.
+
 ### Home Page
 - The home page on this project has been kept simple as this is not the main focus of my project however it serves the purpose of welcoming site users giving them a welcome to the club/website and the course location/address.
 - It has been made using bootstrap just like all of the HTML structure on this project, as a result it is fully responsive on all screen sizes utilising a collapsable navbar on smaller devices.
 ![Image to show the home page](static/images/homepage.png)
+
 ### Booking Page
 - The booking page has a login_required attached to the views.py file to ensure that it can only display when an authenticated user is logged in, otherwise the user will be met with the signin page before being able to access the booking page.
 - Once the user is signed in then the booking page is displayed, the user is then met with a nice image of the course with initial information about member and visitor booking.
@@ -51,6 +54,14 @@ The above image shows the booking page when a user is logged in
 It also has messages that come up if the form has an error and is not completed correctly prompting the user to try again, if they booking is successful the user will be redirected to my bookings and shown a successful booking message.
 The messages are also linked to the edit/cancel booking page which will show to confirm the successfull changes or cancellation to a booking.
 ![Image to show an example confirmation message](static/images/signinmessage.png)
+
+### Using Bootstrap
+- I decided to import a basic bootstrap navbar from the bootstrap website then modify it to the needs of my site.
+- The rest of the bootstrap used on this project is completely my own and not inspired from anywhere.
+
+### Images
+- All images used on this site are from google images and are random courses as Burch's Golf Course does not exist.
+
 ## Using Agile
 - I do not believe that I have used agile entirely correctly throughout this project as I did not think to add smaller parts of the project like styling and bugs that I came into until my mentor suggested that I needed to add these things.
 - Requirements were captured as user stories as issues and put into my 'project' on github for tracking progress. They describe features from the end-user's perspective.
@@ -118,9 +129,11 @@ Signup
 
 - There was a bug where the booking form would only let you submit if you added a player into the Name: section of the form, this should not be the case, it should submit even if this field is left blank as players should be able to book for just themselves. 
 
-- I had a problem when making my django models for making a booking where once a user had filled out the booking form it was not saving properly to the database and creating the booking, this made me rethink and rewrite my code for the whole booking process to solve it. Once I had re written the code it was working how I wanted it too.
+- I had a problem when making my django models for making a booking where once a user had filled out the booking form it was not saving properly to the database and creating the booking, this made me rethink and rewrite my code for the whole booking process to solve it. 
+ - Once I had re written the code it was working how I wanted it too.
 
-- There was a bug where the successfully signed in alert stays on the page creating an area of blank space between the booking page top image and the navbar that should not be there and it is not possible to scroll up and delete this alert. This bug was fixed when I went back to add in the final messages for telling the user that they have successfully signed in or completed a form anywhere on the site.
+- There was a bug where the successfully signed in alert stays on the page creating an area of blank space between the booking page top image and the navbar that should not be there and it is not possible to scroll up and delete this alert. 
+ - This bug was fixed when I went back to add in the final messages for telling the user that they have successfully signed in or completed a form anywhere on the site.
 
 ### Problems I Had
 
@@ -132,14 +145,22 @@ my mistakes from the previous models and get it right this time. I am very happy
 - When doing my final deploy for my project I had my secret key setup wrong and it was visible in the settings.py file, I moved this to a file that is in the gitignore. file so that it can not be accessed for security reasons, I had some issues with this as I did not import the secret key from the file it was in correctly. This lead to my site having an error which did not tell me the root cause of the issue even with debug = True. To resolve the issue I went back to the Code Institute walkthrough project to check through the deployment steps, I quickly realised where I had gone wrong and rectified this issue.
 
 ### Deployment
-- For deploying this project their are many more steps to previous projects. I personally had some issues when trying to get my static files to work on my deployed project through heroku. I later found my issue after about 30-45 minutes of searching that I had not removed the 'collect_static' from my Config Vars on settings of my heroku app.
+- For deploying this project there are many more steps to previous projects. I personally had some issues when trying to get my static files to work on my deployed project through heroku. I later found my issue after about 30-45 minutes of searching that I had not removed the 'collect_static' from my Config Vars on settings of my heroku app.
 
 Steps for deployment:
-- Debug must be set to FALSE in the settings.py file
-1. Firstly to deploy a project you must create an app on heroku and link your github repository
-2. Next add your config for your database URL and secret_key that is in your settings.py file of your django project. Also add a collect static config var which will later need removing.
-3. To ready your code to deploy you must use pip3 to install gunicorn and whitenoise (freeze these to local - requirements.txt file), add a Procfile file and add heroku to the allowed hosts in settings.py.
-4.  Once I had 
+1. Go to your Heroku dashboard and create a new app with a unique name, in the new apps settings tab open the reveal config vars ensure the Config Var DISABLE_COLLECTSTATIC key has a value of 1.
+2. Use pip3 to install gunicorn~=20.1 and freeze it to the requirements.txt file.
+3. In the Procfile add a command using gunicorn and wsgi file to start the webserver.
+4. In the settings.py file set debug to False and add '.herokuapp.com' to the ALLOWED_HOSTS list. Commit and push this code
+5. Go to your heroku app, connect your github repository and deploy branch to check that you have completed this initial setup correctly.
+6. Next you will have added a database so you need to go to your heroku settings and add DATABASE_URL config var with a value of your database URL
+7. Make sure that your env.py file is in your gitignore. file, also add your SECRET_KEY to the env.py file and import os
+8. Next add SECRET_KEY = os.environ.get("SECRET_KEY") to your settings.py file, this will get the secret key from the env.py file which is hidden to keep your SECRET_KEY safe.
+9. Next to add your static files to your deployed project use pip3 to install whitenoise~=5.3.0 and freeze to requirements.txt and add 'whitenoise.middleware.WhiteNoiseMiddleware', to MIDDLEWARE in settings.py
+10. Add STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') to settings.py and run python3 manage.py collectstatic, this will create a new folder called 'staticfiles' which will be added to the gitignore. file
+11. Next check the version of python in your IDE by using python3 -V, once you find out your version go to https://devcenter.heroku.com/articles/python-support#specifying-a-python-version and copy the nearest version and paste it into a new file called 'runtime.txt' in the root directory of the repo. Now commit and push your code.
+12. Finally go to your heroku app settings and remove the DISABLE_COLLECTSTATIC config var and deploy your branch.
+13. Open your live site, if it is showing as the development version then you have successfully deployed your project!
 
 Link to the live site : https://pp4-django-project-082841c8663e.herokuapp.com/
 
